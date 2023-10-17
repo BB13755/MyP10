@@ -1,0 +1,248 @@
+/* Mario animation */
+#mario {
+  position: absolute;
+  top: 40px;
+  left: -50px;
+  /* Starting position outside the screen */
+  animation: moveMario 6s linear infinite;
+}
+
+@keyframes moveMario {
+  0% {
+    transform: scaleX(1);
+    /* Face Mario to the right */
+    left: -50px;
+    /* Starting position */
+  }
+
+  10% {
+    transform: scaleX(-1);
+    left: calc(100px);
+  }
+
+  30% {
+    transform: scaleX(1);
+    left: calc(30% + 30px);
+  }
+
+  50% {
+    transform: scaleX(-1);
+    left: calc(50% + 50px);
+  }
+
+  100% {
+    transform: scaleX(1);
+    /* Flip Mario to face left */
+    left: calc(100% + 50px);
+    /* Move Mario outside the screen from the right */
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px, 1fr);
+  text-align: center;
+  border-style: ridge;
+  border-color: rgb(255, 255, 255);
+}
+
+.featured-articles {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.article-cards {
+  background-color: rgb(241, 31, 224);
+  min-height: calc(100vh - 300px);
+  justify-content: space-around;
+  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  align-items: center;
+}
+
+.card {
+  min-height: 35rem;
+  max-width: 23rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: black;
+}
+
+#img1,
+#img2,
+#img3,
+#img4 {
+  height: 228.42px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.Hobby {
+  border-style: solid;
+  background-color: rgb(248, 24, 211);
+  text-align: center;
+}
+
+.Hobby2 {
+  text-align: center;
+  border-style: solid;
+  color: rgb(248, 24, 211);
+}
+
+repeat(auto-fit, minmax(300px, 1fr) .Places {
+    border-style:solid;
+    background-color: rgb(248, 24, 211);
+    text-align:center;
+  }
+
+  .container {
+    display: grid;
+    width: 100%;
+    min-height: calc(100vh - 4.25rem);
+    place-content: center;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .dark-mode {
+    background-color: #333;
+    color: #f0f0f0;
+    transition: all 0.4s ease-in;
+  }
+
+  .toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 3.75rem;
+    height: 2.13rem;
+    margin-bottom: 0.63rem;
+    margin-inline: auto;
+  }
+
+  .toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: all 0.4s ease-in;
+    border-radius: 2.13rem;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.63rem;
+    width: 1.63rem;
+    left: 0.25rem;
+    bottom: 0.25rem;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  input:checked + .slider {
+    background-color: #2196f3;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 2px #2196f3;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(1.63rem);
+  }
+
+  /* Age Calculator */
+  .container {
+    margin: 3.13rem auto;
+    max-width: 31.25rem;
+    background-color: #fff;
+    padding: 1.25rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 1.9rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    margin-bottom: 0.63rem;
+    font-weight: bold;
+  }
+
+  small {
+    font-style: italic;
+    font-size: 0.75rem;
+  }
+
+  input {
+    padding: 0.63rem;
+    margin-bottom: 1.25rem;
+    margin-top: 1.25rem;
+    border-radius: 5px;
+    border: 2px solid #9898ab;
+  }
+
+  .button-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 0.9rem;
+  }
+
+  button {
+    color: white;
+    border: none;
+    border: 2px solid #1781c9;
+    border-radius: 5px;
+    padding: 0.63rem;
+    cursor: pointer;
+  }
+
+  .submit {
+    background-color: #1781c9;
+  }
+
+  .reset {
+    background-color: white;
+    color: #1781c9;
+  }
+
+  .submit:hover {
+    background-color: #1774b3;
+    border-color: #1774b3;
+  }
+
+  .reset:hover {
+    border-color: #1774b3;
+    color: #1774b3;
+  }
+
+  #age {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 1.25rem;
+  }
