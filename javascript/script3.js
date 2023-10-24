@@ -1,39 +1,28 @@
-// Write your code below
-// get DOM elements
-const form = document.querySelector('#age-form');
-const birthdateInput = document.querySelector('#birthdate');
-const ageOutput = document.querySelector('#age');
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.querySelector('#contact');
+  const submitButton = document.querySelector('#submitBtn');
+  const successMessage = document.getElementById('form-submitted-msg');
 
-// listen for form submit event
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (form.checkValidity()) {
+      successMessage.style.display = 'block';
+    } else {
+      successMessage.style.display = 'none';
+    }
+  });
 
-  // get input value
-  const birthdateString = birthdateInput.value;
+  form.addEventListener('input', function (e) {
+    if (e.target.checkValidity()) {
+      e.target.style.borderColor = 'initial';
+    } else {
+      e.target.style.borderColor = 'red';
+    }
 
-
-  // validate input with regex
-  const dateRegex = /^\d{2}\/\d{2}\/\d{4}$/;
-  if (!dateRegex.test(birthdateString)) {
-    alert('Please enter a valid birthdate in MM/DD/YYYY format.');
-    return;
-  }
-
-
-  // parse input as date object
-  const birthdate = new Date(birthdateString);
-
-
-  // calculate age
-  const ageInMilliseconds = Date.now() - birthdate.getTime();
-  const ageDate = new Date(ageInMilliseconds);
-  const age = Math.abs(ageDate.getUTCFullYear() - 1970);
-
-
-  // display age
-  ageOutput.textContent = `You are ${age} years old.`;
+    if (form.checkValidity()) {
+      submitButton.disabled = false;
+    } else {
+      submitButton.disabled = true;
+    }
+  });
 });
-
-form.addEventListener('reset', function() {
-  ageOutput.textContent = null;
-})

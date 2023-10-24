@@ -246,3 +246,18 @@ repeat(auto-fit, minmax(300px, 1fr) .Places {
     font-size: 1.5rem;
     margin-top: 1.25rem;
   }
+
+input:invalid {
+  border-color: red;
+}
+
+ /* .submit Good
+#form-submitted-msg {
+  margin-bottom: 3rem;
+  border-radius: 3px;
+  background-color: rgb(67, 161, 67);
+  padding: 0.5rem;
+  width: 40%;
+  text-align: center;
+  color: #fff;
+  display: none;*/
